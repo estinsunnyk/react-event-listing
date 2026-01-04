@@ -1,4 +1,5 @@
 .footer-wrap {
   padding: 1rem 0;
   border-top: 2px solid var(--color-secondary);
+  text-align: center;
 }
