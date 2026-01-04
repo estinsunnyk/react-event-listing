@@ -1,7 +1,7 @@
 import type { JSX } from 'react';
 import styles from './typography.module.css';
 
-type TypographyVariant = 'title' | 'body' | 'caption';
+type TypographyVariant = 'title' | 'subtitle' | 'body' | 'caption';
 
 interface TypographyProps {
   variant?: TypographyVariant;
