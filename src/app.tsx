@@ -1,9 +1,10 @@
 import { Layout } from './layouts';
+import { EventList } from './components/event/list';
 
 function App() {
   return (
     <Layout>
-      <div>Events</div>
+      <EventList />
     </Layout>
   );
 }
