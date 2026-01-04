@@ -2,13 +2,16 @@
   /* Tokens */
   --color-primary: #fff;
   --color-secondary: #0093ad;
-  --color-text-primary: #575757;
-  --color-text-secondary: #8f8e8e;
+  --color-monochrome-dark: #474747;
+  --color-monochrome-med: #575757;
+  --color-monochrome-reg: #8f8e8e;
+  --color-monochrome-light: #ccc;
+  --color-monochrome-white: #fff;
 
   /* Root css */
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   color-scheme: light;
-  color: var(--color-text-primary);
+  color: var(--color-monochrome-med);
   background-color: var(--color-primary);
   font-synthesis: none;
   text-rendering: optimizelegibility;
