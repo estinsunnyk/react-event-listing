@@ -1,10 +1,14 @@
 import type { Event } from '../components/event/types/event.type';
 
+// Set one event to always be tomorrow to ensure tests don't break over time
+const tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+
 export const events: Event[] = [
   {
     id: 1,
     name: 'Blood Donation Drive',
-    date: '2026-01-20',
+    date: tomorrow.toISOString().split('T')[0], // Awlays tomorrow
     location: 'London, UK',
   },
   {
@@ -69,7 +73,7 @@ export const events: Event[] = [
   },
   {
     id: 12,
-    name: 'Flu Vaccination Drive',
+    name: 'Sleep Health Seminar',
     date: '2026-01-02',
     location: 'London , UK',
   },

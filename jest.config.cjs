@@ -4,7 +4,7 @@ module.exports = {
   roots: ['<rootDir>/src'],
   testMatch: ['**/__tests__/**/*.ts?(x)', '**/?(*.)+(spec|test).ts?(x)'],
   moduleNameMapper: {
-    '\\.(css|less|scss|sass)$': '<rootDir>/test/style-mock.ts',
+    '\\.(css|less|scss|sass)$': '<rootDir>/test/mocks/style-mock.ts',
   },
   setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
   transform: {
