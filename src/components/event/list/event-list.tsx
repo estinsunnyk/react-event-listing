@@ -8,6 +8,17 @@ import styles from './event-list.module.css';
 export function EventList() {
   const [searchString, setSearchString] = useState('');
 
+  // Get only upcoming events
+  const upcomingEvents = useMemo(() => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    return events.filter((event) => {
+      const eventDate = new Date(event.date);
+      return eventDate >= today;
+    });
+  }, [events]);
+
   // Filter and Sort events
   const filteredEvents = useMemo(() => {
     // Filter by search string
@@ -22,27 +33,19 @@ export function EventList() {
       );
     };
 
-    // Sort by date: upcoming events soonest, then past
+    // Sort by date (soonest first)
     const sortByDate = (eventList: Event[]): Event[] => {
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-
-      return eventList.sort((a, b) => {
+      return [...eventList].sort((a, b) => {
         const dateA = new Date(a.date);
         const dateB = new Date(b.date);
-        const isAPast = dateA < today;
-        const isBPast = dateB < today;
 
-        if (isAPast !== isBPast) return isAPast ? 1 : -1;
-
-        return isAPast
-          ? dateB.getTime() - dateA.getTime()
-          : dateA.getTime() - dateB.getTime();
+        return dateA.getTime() - dateB.getTime();
       });
     };
 
-    const filteredData = filterBySearchString(events);
-    return sortByDate(filteredData);
+    const searchedEvents = filterBySearchString(upcomingEvents);
+
+    return sortByDate(searchedEvents);
   }, [searchString]);
 
   return (
@@ -51,7 +54,7 @@ export function EventList() {
         variant="title"
         as="h2"
         className={styles['event-list-heading']}>
-        Events
+        Find Your Event
       </Typography>
       <div className={styles['event-list-search']}>
         <input
@@ -96,6 +99,14 @@ export function EventList() {
           ))}
         </ul>
       )}
+      <div
+        role="status"
+        aria-live="polite"
+        className={styles['event-pagination']}>
+        <Typography variant="caption">
+          Showing {filteredEvents.length} of {upcomingEvents.length} events
+        </Typography>
+      </div>
     </div>
   );
 }

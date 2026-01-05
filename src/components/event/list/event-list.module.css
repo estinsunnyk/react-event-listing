@@ -31,7 +31,7 @@
 
 .event-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem;
   list-style: none;
@@ -51,7 +51,6 @@
 .event-item-name {
   margin-bottom: 0.75rem;
   overflow-wrap: break-word;
-  overflow-wrap: break-word;
   hyphens: auto;
 }
 
@@ -62,4 +61,10 @@
 
 .event-item-location {
   color: var(--color-monochrome-reg);
+}
+
+.event-pagination {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-monochrome-reg);
 }

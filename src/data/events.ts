@@ -10,7 +10,7 @@ export const events: Event[] = [
   {
     id: 2,
     name: 'First Aid Training Session',
-    date: '2025-12-28',
+    date: '2026-05-12',
     location: 'Isle of Wight, UK',
   },
   {
@@ -52,7 +52,7 @@ export const events: Event[] = [
   {
     id: 9,
     name: 'First Aid Training Session',
-    date: '2025-12-28',
+    date: '2026-01-28',
     location: 'York, UK',
   },
   {
@@ -60,5 +60,17 @@ export const events: Event[] = [
     name: 'Flu Vaccination Drive',
     date: '2026-01-12',
     location: 'Newcastle , UK',
+  },
+  {
+    id: 11,
+    name: 'First Aid Training Session',
+    date: '2025-12-28',
+    location: 'London, UK',
+  },
+  {
+    id: 12,
+    name: 'Flu Vaccination Drive',
+    date: '2026-01-02',
+    location: 'London , UK',
   },
 ];
