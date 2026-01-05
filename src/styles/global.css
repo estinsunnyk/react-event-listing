@@ -9,7 +9,7 @@
   --color-monochrome-white: #fff;
 
   /* Root css */
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, sans-serif;
   color-scheme: light;
   color: var(--color-monochrome-med);
   background-color: var(--color-primary);
