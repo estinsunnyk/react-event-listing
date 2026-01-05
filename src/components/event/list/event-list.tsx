@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { Typography } from '../../../lib/typography';
 import { formatDate } from '../../../utils';
 import { events } from '../../../data/events';
+import { FIND_EVENT_TITLE, NO_EVENTS_FOUND_MESSAGE } from '../constants';
 import type { Event } from '../types';
 import styles from './event-list.module.css';
 
@@ -54,7 +55,7 @@ export function EventList() {
         variant="title"
         as="h2"
         className={styles['event-list-heading']}>
-        Find Your Event
+        {FIND_EVENT_TITLE}
       </Typography>
       <div className={styles['event-list-search']}>
         <input
@@ -64,6 +65,7 @@ export function EventList() {
           onChange={(e) => setSearchString(e.target.value)}
           area-label="Search events by name or location"
           className={styles['event-list-search-input']}
+          data-testid="event-search-input"
         />
       </div>
       {filteredEvents.length === 0 ? (
@@ -71,7 +73,7 @@ export function EventList() {
           className={styles['event-list-empty']}
           role="status"
           aria-live="polite">
-          <Typography variant="body">No events found!</Typography>
+          <Typography variant="body">{NO_EVENTS_FOUND_MESSAGE}</Typography>
         </div>
       ) : (
         <ul className={styles['event-list']} role="list">
