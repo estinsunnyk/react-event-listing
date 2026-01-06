@@ -87,9 +87,10 @@ Commit messages must follow [Conventional Commits](https://www.conventionalcommi
 
 - **Dynamic dates** - One event always set to "tomorrow" to prevent test failures over time
 
-## Future Improvements
+## Potential Improvements
 
 - Expand design tokens (spacing, font-size, font-family etc.)
 - Pagination/Lazy Loading - Handle large datasets
 - Add unit tests for Lib and Utils
 - Accessibility
+- Add reusable Card and TextInput components
