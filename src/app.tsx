@@ -1,11 +1,17 @@
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from './layouts';
-import { EventList } from './components/event/list';
+import { EventListPage } from './pages/event/list';
 
 function App() {
   return (
-    <Layout>
-      <EventList />
-    </Layout>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Navigate to="/event/list" replace />} />
+          <Route path="/event/list" element={<EventListPage />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
