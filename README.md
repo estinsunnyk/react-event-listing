@@ -1,73 +1,95 @@
-# React + TypeScript + Vite
+# Event Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application for viewing and searching upcoming events with real-time filtering.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Event Listing** - Display upcoming events sorted by soonest date
+**Real-time Search** - Filter events by name or location
+**Empty State** - User-friendly messaging when no events match
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** with TypeScript
+- **Vite** for fast development
+- **React Router** for navigation
+- **Jest** for testing
+- **ESLint + Prettier + Stylelint** for code quality
+- **Husky + lint-staged** for pre-commit hooks
+- **CSS Modules** with kebab-case naming
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Installation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Install dependencies
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Start development server
+npm run dev
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
+
+### Testing
+
+```bash
+# Run all tests
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+**Test Coverage:**
+
+- **8 test cases** covering all event listing functionality
+- Show upcoming events
+- Filtering logic (name, location)
+- Empty state handling
+- Event count after filtering
+
+### Code Quality
+
+```bash
+# Lint TypeScript
+npm run lint
+npm run lint:fix
+
+# Lint CSS
+npm run lint:css
+npm run lint:css:fix
+
+# Format code
+npm run format
+```
+
+### Git Hooks
+
+Pre-commit hooks automatically run:
+
+- ESLint on staged JS/TS files
+- Stylelint on staged CSS files
+- Prettier formatting
+
+Commit messages must follow [Conventional Commits](https://www.conventionalcommits.org/) format.
+
+### Testing Strategy
+
+- **Dynamic dates** - One event always set to "tomorrow" to prevent test failures over time
+
+## Future Improvements
+
+- Expand design tokens (spacing, font-size, font-family etc.)
+- Pagination/Lazy Loading - Handle large datasets
+- Add unit tests for Lib and Utils
+- Accessibility
