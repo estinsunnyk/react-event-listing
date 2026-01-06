@@ -18,7 +18,7 @@ export function EventList() {
       const eventDate = new Date(event.date);
       return eventDate >= today;
     });
-  }, [events]);
+  }, []);
 
   // Filter and Sort events
   const filteredEvents = useMemo(() => {
@@ -47,7 +47,7 @@ export function EventList() {
     const searchedEvents = filterBySearchString(upcomingEvents);
 
     return sortByDate(searchedEvents);
-  }, [searchString]);
+  }, [searchString, upcomingEvents]);
 
   return (
     <div className={styles['event-list-wrap']}>
