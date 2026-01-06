@@ -4,9 +4,9 @@ A React application for viewing and searching upcoming events with real-time fil
 
 ## Features
 
-**Event Listing** - Display upcoming events sorted by soonest date
-**Real-time Search** - Filter events by name or location
-**Empty State** - User-friendly messaging when no events match
+- **Event Listing** - Display upcoming events sorted by soonest date
+- **Real-time Search** - Filter events by name or location
+- **Empty State** - User-friendly messaging when no events match
 
 ## Tech Stack
 
