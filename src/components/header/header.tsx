@@ -5,7 +5,7 @@ export function Header() {
   return (
     <header className={styles['header-wrap']}>
       <Typography variant="title" as="h1">
-        Event Listing
+        Event Finder
       </Typography>
     </header>
   );
